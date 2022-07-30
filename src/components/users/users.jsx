@@ -3,7 +3,7 @@ import './users.css'
 import nullPhoto from './../../assets/img/null_photo.webp'
 import { Link } from 'react-router-dom'
 import isPreloader from '../../assets/common/preloader/preloader'
-import preloader from '../../assets/common/preloader/preloader.svg'
+
 
 
 const Users = ({usersInfo, pagesCount, sizePage, onPageChanged, currentPage, isFetching, followingInProgress, followToggle}) => {
@@ -62,7 +62,6 @@ const Users = ({usersInfo, pagesCount, sizePage, onPageChanged, currentPage, isF
 
     return (
         <div className='users'>
-            <img src={preloader}></img>
             {isPreloader(isFetching)}
             <div className="users-switcher">
                 <button><i className="bi bi-chevron-double-left button-left" onClick={() => {
