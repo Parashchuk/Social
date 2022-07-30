@@ -1,0 +1,39 @@
+.nav-links {
+    height: 100%;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.nav-links_container-links {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    width: 10%;
+    padding: 20px;
+}
+.container-links-link {
+    color: black;
+    padding: 5px;
+    margin: 2px;
+    font-size: 22px;
+    border-radius: 3px 10px 3px 3px;
+    transition: .2s;
+}
+
+.container-links-link:hover {
+    color: white;
+    background-color: steelblue;
+}
+
+.container-links_wraper {
+    display: flex;
+    align-items: center;
+}
+
+.container-links_wraper i::before {
+   font-size: 22px;
+   margin-right: 2px;
+   text-align: center;
+}
+

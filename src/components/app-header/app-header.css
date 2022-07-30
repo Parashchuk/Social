@@ -1,0 +1,91 @@
+.app-header {
+    min-height: 70px;
+    width: 100%;
+    height: 8%;
+    background-color: steelblue;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.app-header_container {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-header_container-search {
+    display:flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.container-search_link {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.app-header_container-input-searching {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.bi-search {
+    padding-left: 10px;
+    margin-bottom: 2px;
+}
+
+.app-header_container-search input {
+    width: 100%;
+    margin-left: 8px;
+    background-color: white;
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.app-header_container-search form {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.app-header_container-search button {
+    background-color: white;
+    font-size: 18px;
+    color: grey;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.app-header_container-search button:active {
+    border: 1px solid grey;
+}
+
+.conteiner-avatar_link{
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 15px;
+    color: white;
+}
+
+.app-header_container-logOut button{
+    padding: 5px 20px 5px 20px;
+    transition: all .2s;
+}
+
+.app-header_container-logOut button:hover{
+    box-shadow: inset 0px 0px 5px grey;
+}

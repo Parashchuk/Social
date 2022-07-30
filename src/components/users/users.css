@@ -1,0 +1,132 @@
+.users {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.users-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 95%;
+    overflow: hidden;
+}
+
+.users-wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.wrapper-user_avatar {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    margin-right: 15px;
+}
+
+.wrapper-user_avatar button {
+    margin-top: 10px;
+    padding: 5px;
+    transition: .2s;
+}
+
+.wrapper-user_avatar button:hover {
+    color: white;
+    background-color: steelblue;
+}
+
+.wrapper-user_avatar img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.wrapper-user_info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(250, 250, 250);
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 10px;
+}
+
+.user-info_bio {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-info_location {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info_location span{
+    text-align: end;
+}
+
+.users-switcher {
+    margin: 15px 0;
+}
+
+.button-right {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.button-left {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.users-switcher span{
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.users-switcher button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+.current_page {
+    font-weight: bold;
+    font-size: 24px;
+    color: steelblue;
+    background-color: rgba(190, 190, 190, 0.300);
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.users-preloader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 25%;
+}
+
+button:disabled {
+    cursor: default;
+    background-color:rgb(230, 230, 230);
+}
+
+button:disabled:hover{
+    cursor: default;
+    color: grey;
+    background-color: rgb(230, 230, 230);
+}
+
+.user-info_bio span {
+    max-width: 760px;
+}

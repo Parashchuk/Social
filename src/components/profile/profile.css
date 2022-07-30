@@ -1,0 +1,56 @@
+.profile {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    padding: 2%;
+    align-items: flex-start;
+}
+
+.profile-container {
+    display: inline-flex;
+    width: 100%;
+    height: 30%;
+    justify-content: space-between;
+    background-color: rgb(250, 250, 250);
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 15px;
+    padding: 2% 1%;
+}
+
+.profile-about {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .8%;
+
+}
+
+.profile-avatar {
+    margin-right: 30px;
+    border-radius: 15px;
+}
+
+.profile-user-info_aboutMe {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-user-info_name {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.profile-user-info_aboutMe {
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.profile-jobDescription {
+    margin-left: 2px;
+}
+
+
