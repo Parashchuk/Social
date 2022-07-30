@@ -25,22 +25,6 @@ const Profile = ({status, state, updateProfileStatus, isAuth, isFetching}) => {
         return(
             <div className="profile">
 
-                {/* Show preloader while the data is receiving */}
-                {isPreloader(isFetching)}
-
-                <div className="profile-container">
-                    <img className='profile-avatar' src={photo} alt='avatar'/>
-                    <div className="profile-about">
-                        <div className="profile_user-info">
-                            <span className='profile-user-info_name'>{state.fullName}</span>
-                            <ProfileStatus status={status} updateProfileStatus={updateProfileStatus}/>
-                        </div>
-                        <div className="profile_user-job">
-                            <span className='profile-lookJob'>{state.lookingForAJob}</span>
-                            <span className='profile-jobDescription'>{jobDescription}</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         )
 }
