@@ -24,7 +24,7 @@ function withRouter(Component) {
 }
 
 //Create a class to get Lifecycle methods //
-class ProfileAPI extends React.Component {
+class ProfileAPI extends React.PureComponent {
     isWasAxiosRequest = false
 
     //Check if this is an owner profile request //
