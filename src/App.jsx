@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import AppHeaderContainer from './components/app-header/app-header-container'
 import ProfileContainer from './components/profile/profile-container'
 import MessagesContainer from './components/messages/messages-container'
@@ -15,7 +15,7 @@ const App = (state) => {
 
     return (
         <div className="app">
-            <BrowserRouter>
+            <HashRouter>
                 { state.auth.isAuth ? <AppHeaderContainer /> : null }
                 <div className='app_container'>
                     {state.auth.isAuth ? <NavLinks /> : null}
@@ -29,7 +29,7 @@ const App = (state) => {
                     </Routes>
                 </div>
 
-            </BrowserRouter>
+            </HashRouter>
         </div>
     )
 }
