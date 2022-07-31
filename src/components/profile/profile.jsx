@@ -8,6 +8,8 @@ import ProfileStatus from '../profile-status/profile-status';
 
 const Profile = ({status, state, updateProfileStatus, isAuth, isFetching}) => {
     //Redirect if not logined to Login //
+    console.log(isPreloader)
+    console.log(isPreloader(true))
     if(isAuth !== true) return <Navigate to='/login'/>
 
     if(!state.photos) return(
