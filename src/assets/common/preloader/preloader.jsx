@@ -1,11 +1,11 @@
 import React from 'react'
 import preloader from './preloader.svg'
+import './preloader.css'
 
 //Create a preloader component //
 const isPreloader = (isFetching) => {
-    console.log('test')
     return (
-    <>{isFetching ? <img className='users-preloader' src={preloader} alt='preloader'></img> : null}</>
+    <>{isFetching ? <img id='preloader' style={{opacity: '25%'}} src={preloader} alt='preloader'></img> : null}</>
     )
 }
 
