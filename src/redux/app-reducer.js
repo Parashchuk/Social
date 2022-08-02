@@ -5,7 +5,7 @@ import {isAuth} from '../api/api'
 const SET_INITIALIZED = 'socialMedia/app-reducer/SET_INITIALIZED'
 
 const initialState = {
-    initialased: null
+    initialized: null
 }
 
 //Reducer //
