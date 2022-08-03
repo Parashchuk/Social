@@ -18,10 +18,12 @@ class ProfileStatus extends React.PureComponent {
 
     //Toggle Status Edit mode //
     toggleProfileStatus = (event) => {
-        event.preventDefault()
-        this.setState({
-            editMode: !this.state.editMode
-        })
+        if(this.props.userId === this.props.userOwnerId) {
+            event.preventDefault()
+            this.setState({
+                editMode: !this.state.editMode
+            })
+        }
     }
 
     //Change value of controlled component //

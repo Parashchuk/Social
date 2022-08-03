@@ -6,7 +6,7 @@ import isPreloader from '../../assets/common/preloader/preloader';
 import ProfileStatus from '../profile-status/profile-status';
 
 
-const Profile = ({status, state, updateProfileStatus, isAuth, isFetching}) => {
+const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOwnerId}) => {
     //Redirect if not logined to Login //
     if(isAuth !== true) return <Navigate to='/login'/>
 
@@ -33,7 +33,8 @@ const Profile = ({status, state, updateProfileStatus, isAuth, isFetching}) => {
                     <div className="profile-about">
                         <div className="profile_user-info">
                             <span className='profile-user-info_name'>{state.fullName}</span>
-                            <ProfileStatus status={status} updateProfileStatus={updateProfileStatus}/>
+                            <ProfileStatus userId={state.userId} userOwnerId={userOwnerId}
+                            status={status} updateProfileStatus={updateProfileStatus}/>
                         </div>
                         <div className="profile_user-job">
                             <span className='profile-lookJob'>{state.lookingForAJob}</span>

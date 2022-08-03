@@ -46,11 +46,13 @@ class ProfileAPI extends React.PureComponent {
         {
             this.isWasAxiosRequest = true
             this.props.loadUserProfile(this.props.uID)
+            this.props.loadProfileStatus(this.props.uID)
         }
     }
     
     render() {
         return <Profile 
+            userOwnerId={this.props.uID}
             status={this.props.state.profileStatus}
             isAuth = {this.props.isAuth} 
             state={this.props.state.userProfile}
