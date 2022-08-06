@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {followToggle, getUsers} from '../../redux/users-reducer'
+import {followToggle, getUsers, setStartOfPage} from '../../redux/users-reducer'
 import Users from './users'
 import withAuthRedirect from '../../hoc/withAuthRedirect'
 import { compose } from 'redux'
@@ -29,7 +29,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     getUsers,
-    followToggle
+    followToggle,
+    setStartOfPage,
 }
 
 export default compose(

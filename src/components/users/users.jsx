@@ -6,11 +6,16 @@ import isPreloader from '../../assets/common/preloader/preloader'
 
 
 
-const Users = ({usersInfo, pagesCount, sizePage, onPageChanged, currentPage, isFetching, followingInProgress, followToggle}) => {
+const Users = ({usersInfo, pagesCount, onPageChanged, currentPage,
+    isFetching, followingInProgress, followToggle, sizePagination = 20,
+    setStartOfPage, startOfPage}) => {
+
+    let endOfPage = startOfPage + sizePagination;
+    let endOfAllPages = pagesCount / sizePagination;
 
     //Create Pagination //
     let pagination = []
-    for(let i = 1; i <= Math.ceil(pagesCount / sizePage); i++) {
+    for(let i = startOfPage; i < endOfPage; i++) {
         pagination.push(<span 
             className={i === currentPage ? 'current_page' : ''} 
             key={i} 
@@ -65,13 +70,17 @@ const Users = ({usersInfo, pagesCount, sizePage, onPageChanged, currentPage, isF
             {isPreloader(isFetching)}
             <div className="users-switcher">
                 <button><i className="bi bi-chevron-double-left button-left" onClick={() => {
-                    if(currentPage !== 1) --currentPage
-                    onPageChanged(currentPage)}}/>
+                    if(startOfPage > sizePagination) {
+                        setStartOfPage(startOfPage - sizePagination)
+                        onPageChanged(startOfPage - sizePagination)
+                    }}}/>
                 </button>
                 {pagination}
                 <button><i className="bi bi-chevron-double-right button-right" onClick={() => {
-                    if(currentPage !== 20) ++currentPage
-                    onPageChanged(currentPage)}}/>
+                    if(startOfPage <= endOfAllPages) {
+                        setStartOfPage(startOfPage + sizePagination)
+                        onPageChanged(startOfPage + sizePagination)
+                    }}}/>
                 </button>
             </div>
             <div className='users-container'>

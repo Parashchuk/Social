@@ -6,19 +6,22 @@ const SET_USERS = 'socialMedia/users-reducer/SET-USERS'
 const SET_CURRENT_PAGE = 'socialMedia/users-reducer/SET-CURRENT-PAGE'
 const TOGGLE_FETCHING = 'socialMedia/users-reducer/TOGGLE-FETCHING'
 const TOGGLE_IS_FOLLOWING_PROGRES = 'socialMedia/users-reducer/TOGGLE-IS-FOLLOWING-PROGRESS'
+const SET_NUMBER_OF_USERS = 'socialMedia/users-reducer/SET-NUMBER-OF-USERS'
+const SET_START_OF_PAGE = 'socialMedia/users-reducer/SET-START-OF-PAGE'
 
 let initialState = {
+    startOfPage: 1,
     usersInfo : [],
     sizePage: 4,
     currentPage: 1,
-    pagesCount: 80,
+    pagesCount: null,
     isFetching: false,
     followingInProgress: []
 }
 
 //Reducer //
 const usersReducer = (state = initialState, action) => {
-    const {type, id, users, currentPage, isFetching} = action
+    const {type, id, users, currentPage, isFetching, number, page} = action
     switch(type) {
         case ON_FOLLOWED_CHANGE :
             return ({
@@ -47,6 +50,16 @@ const usersReducer = (state = initialState, action) => {
                 ? [...state.followingInProgress, id]
                 : [...state.followingInProgress.filter(el => el !== id)]
             })
+        case SET_NUMBER_OF_USERS :
+            return ({
+                ...state,
+                pagesCount: number
+            })
+        case SET_START_OF_PAGE :
+            return({
+                ...state,
+                startOfPage: page
+            })
         default: return state
     }
 }
@@ -57,6 +70,8 @@ export const setUsers = (users) => ({type: SET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export const toggleFetching = () => ({type: TOGGLE_FETCHING})
 export const isFollowingProgress = (id, isFetching) => ({type: TOGGLE_IS_FOLLOWING_PROGRES, id, isFetching})
+export const setNumberOfUsers = (number) => ({type: SET_NUMBER_OF_USERS, number})
+export const setStartOfPage = (page) => ({type: SET_START_OF_PAGE, page})
 
 //Create thunk to get Users by curent page and set Preloader
 export const getUsers = (currentPage, sizePage) => {
@@ -66,6 +81,7 @@ export const getUsers = (currentPage, sizePage) => {
 
         const response = await loadUsers(currentPage, sizePage)
 
+        dispatch(setNumberOfUsers(response.totalCount))
         dispatch(setUsers(response.items))
         dispatch(toggleFetching())
     }
