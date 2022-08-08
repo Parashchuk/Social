@@ -58,7 +58,7 @@ class ProfileStatus extends React.PureComponent {
         : <span onDoubleClick={this.toggleProfileStatus} className='profileStatus-span'> {isStatus} </span>
         
         //Return Status //
-        return (<div className='profileStatus'>{isEditMode}</div>)
+        return (<div className={this.state.editMode ? 'profileStatus-editMode' : 'profileStatus'}>{isEditMode}</div>)
     }
 }
 

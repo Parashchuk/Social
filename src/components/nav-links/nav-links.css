@@ -1,4 +1,5 @@
 .nav-links {
+    display: inline-block;
     height: 100%;
     margin-right: 20px;
     background-color: white;
@@ -35,5 +36,45 @@
    font-size: 22px;
    margin-right: 2px;
    text-align: center;
+   transform: translate(0, -5%)
 }
 
+@media screen and (max-width: 700px) {
+    .nav-links {
+        display: none
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .nav-links {
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0px 0px 5px 5px;
+        max-height: 50px;
+    }
+
+    .container-links-link:hover {
+        color: black;
+        background-color: white;
+    }
+
+    .nav-links_container-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .container-links-link {
+        padding: 0;
+    }
+
+    .nav-links_container-links {
+        padding: 12px 0;
+    }
+
+    .container-links_wraper {
+        margin: 0px 8px;
+    }
+}

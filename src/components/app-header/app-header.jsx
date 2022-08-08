@@ -12,6 +12,7 @@ const AppHeader = (props) => {
         <div className="app-header">
             <div className="app-header_container">
                 <div className="app-header_container-search">
+                    <button className='app-header_burger-menu'></button>
                     <Link className='container-search_link' to="/">SocialMedia</Link>
                     <form>
                         <div className='app-header_container-input-searching'>

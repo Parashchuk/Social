@@ -62,6 +62,7 @@
 
 .app-header_container-search button {
     background-color: white;
+    padding: 0 12px;
     font-size: 18px;
     color: grey;
     border: 1px solid white;
@@ -88,4 +89,51 @@
 
 .app-header_container-logOut button:hover{
     box-shadow: inset 0px 0px 5px grey;
+}
+
+.app-header_burger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .app-header_container {
+        width: 95%;
+    }
+    
+    .app-header_container-search form {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .app-header_container-search form {
+        display: none;
+    }
+
+    .app-header_container-logOut button{
+        display: none;
+    }
+
+    .app-header {
+        min-height: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .app-header_container {
+        justify-content: flex-start;
+    }
+
+    .container-search_link {
+        font-size: 25px;
+    }
+
+    .app-header_burger-menu {
+        display: block;
+        margin-right: 15px;
+    }
+
+    .app-header_container-search {
+        justify-content: flex-start;
+    }
 }
