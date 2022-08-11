@@ -35,7 +35,7 @@ const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOw
                     <div className='profile-about-left'>
                         <div className='profile-about-left-container visual-container'>
                             <img className='profile-avatar' src={photo} alt='avatar'/>
-                            <button className='profile-editButton button'>Edit</button>
+                            <button className='profile-editButton button visual-button'>Edit</button>
                         </div>
                     </div>
                     <div className="profile-about-right">
@@ -53,7 +53,7 @@ const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOw
                                 <span className='profile-jobDescription'>{jobDescription}</span>
                             </div>
                             <div>
-                                <button className='profile-about-more button'>Show More</button>
+                                <button className='profile-about-more button visual-button'>Show More</button>
                             </div>
                         </div>
                     </div>

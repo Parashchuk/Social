@@ -23,7 +23,7 @@ const AppHeader = (props) => {
                     </form>
                 </div>
                 <div className="app-header_container-logOut">
-                    <button onClick={() => props.LogOutUser()}>Log Out</button>
+                    <button className='visual-button' onClick={() => props.LogOutUser()}>Log Out</button>
                 </div>
             </div>
         </div>

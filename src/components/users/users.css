@@ -37,6 +37,15 @@
     transition: .2s;
 }
 
+.wrapper-user_avatar button{
+    background-color: rgb(250, 250, 250);
+    font-size: 18px;
+    color: grey;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .wrapper-user_avatar button:hover {
     color: white;
     background-color: steelblue;
@@ -55,6 +64,10 @@
     background-color: rgb(250, 250, 250);
     border: 2px solid rgb(230, 230, 230);
     border-radius: 10px;
+}
+
+.user-name {
+    font-weight: bold;
 }
 
 .user-info_bio {
@@ -120,4 +133,58 @@ button:disabled:hover{
 
 .user-info_bio span {
     max-width: 760px;
+}
+
+@media screen and (max-width: 700px){
+    .users-container {
+        width: 95%;
+    }
+
+    .users-container button{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .wrapper-user_avatar {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .users-container {
+        width: 95%;
+    }
+
+    .users-container :nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .users-container button{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .wrapper-user_avatar {
+        width: 20%;
+    }
+
+    .wrapper-user_info {
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5px;
+    }
+
+    .user-info_location span{
+        text-align: start;
+    }
+
+    .user-info_location {
+        padding-top: 5px;
+        border-top: 1px solid grey;
+    }
+
+    .user-status {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
 }

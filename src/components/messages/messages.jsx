@@ -6,13 +6,18 @@ const MessagesForm = reduxForm({form : 'messages'})((props) => {
     return (
     <>
         <form onSubmit={props.handleSubmit} className="messages_container_form messages-form">
-            <Field
-                name='message'
-                component='input'
-                autoComplete="off"
-                className='messages-form_input'
-                placeholder='Type new massage here' />
-            <button className='messages-form_button'>Send</button>
+            <div className='messages_container_form-wraper visual-container'>
+                <Field
+                    name='message'
+                    component='input'
+                    autoComplete="off"
+                    className='messages-form_input'
+                    placeholder='Type new massage here' />
+                <button className='messages-form_button-mobile'>
+                <i className="bi bi-arrow-up-circle"></i>
+                </button>
+            </div>
+            <button className='messages-form_button visual-button'>Send</button>
         </form>    
     </>)
 })

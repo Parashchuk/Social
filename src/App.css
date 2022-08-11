@@ -25,15 +25,14 @@
   text-decoration: none;
 }
 
-.app input {
+.visual-input {
   outline: none;
   background-color: rgb(250, 250, 250);
   font-size: 18px;
   border: 2px solid rgb(230, 230, 230);
-  border-radius: 10px;
 }
 
-.button {
+.visual-button {
   background-color: rgb(250, 250, 250);
   font-size: 18px;
   color: grey;

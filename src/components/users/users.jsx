@@ -7,8 +7,14 @@ import isPreloader from '../../assets/common/preloader/preloader'
 
 
 const Users = ({usersInfo, pagesCount, onPageChanged, currentPage,
-    isFetching, followingInProgress, followToggle, sizePagination = 20,
-    setStartOfPage, startOfPage}) => {
+    isFetching, followingInProgress, followToggle, setStartOfPage, startOfPage}) => {
+
+    let sizePagination
+    if(window.screen.width >= 1200) {
+        sizePagination = 20
+    } else {
+        sizePagination = 9
+    }
 
     let endOfPage = startOfPage + sizePagination;
     let endOfAllPages = pagesCount / sizePagination;
@@ -54,8 +60,8 @@ const Users = ({usersInfo, pagesCount, onPageChanged, currentPage,
             </div>
             <div className="wrapper-user_info user-info">
                 <div className="user-info_bio">
-                    <span>{el.name}</span>
-                    <span>{el.status == null ? `The user hasn't written anything here yet`: el.status}</span>
+                    <span className='user-name'>{el.name}</span>
+                    <span className='user-status'>{el.status == null ? `The user hasn't written anything here yet`: el.status}</span>
                 </div>
                 <div className="user-info_location">
                     <span>It-country</span>
