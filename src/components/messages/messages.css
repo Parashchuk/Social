@@ -122,14 +122,6 @@
     .messages_wraper {
         padding-right: 75px;
     }
-
-    .bi-arrow-up-circle {
-        display: none;
-    }
-
-    .messages-form_button-mobile {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 700px) {
@@ -170,3 +162,13 @@
     }
 }
 
+
+@media screen and (min-width: 700px) {
+    .bi-arrow-up-circle {
+        display: none;
+    }
+
+    .messages-form_button-mobile {
+        display: none;
+    }
+}

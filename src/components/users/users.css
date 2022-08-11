@@ -135,7 +135,17 @@ button:disabled:hover{
     max-width: 760px;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 1000px) {
+    .users-container {
+        width: 95%;
+    }
+
+    .wrapper-user_avatar {
+        width: 13%;
+    }
+}
+
+@media screen and (max-width: 700px) {
     .users-container {
         width: 95%;
     }

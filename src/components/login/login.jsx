@@ -11,7 +11,7 @@ const LoginFrom = reduxForm({form: 'login'})((props => {
     return (
         <form onSubmit={props.handleSubmit}>
             <Field
-                className='login-container_input'
+                className='login-container_input visual-input'
                 component={Input}
                 name='email'
                 validate={[required]}
@@ -19,7 +19,7 @@ const LoginFrom = reduxForm({form: 'login'})((props => {
                 placeholder='Login'/>
             <div>
                 <Field 
-                    className='login-container_input'
+                    className='login-container_input visual-input'
                     component={Input}
                     name='password'
                     validate={[required]}
@@ -36,7 +36,7 @@ const LoginFrom = reduxForm({form: 'login'})((props => {
                     type="checkbox" />
                 <label htmlFor="rememberMe">Remember me</label>
             </div>
-            <button type='submit'>Login</button>
+            <button className='visual-button' type='submit'>Login</button>
         </form>
     )
 }))
@@ -47,9 +47,11 @@ const Login = (props) => {
     }
 
     return (
-        <div className='login-container'>
-            <h1>Login</h1>
-            <LoginFrom onSubmit={onSubmit} props = {props}/>
+        <div className='login'>
+            <div className='login-container'>
+                <h1>Login</h1>
+                <LoginFrom onSubmit={onSubmit} props = {props}/>
+            </div>
         </div>
     )
 }
