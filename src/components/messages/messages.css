@@ -20,6 +20,7 @@
 .messages_container_form {
     width: 90%;
     display: flex;
+    margin-top: 10px;
 }
 
 .messages-form_input {
@@ -37,16 +38,15 @@
 }
 
 .messages_container-message {
-    margin: 10px 0;
+    margin: 10px 5px;
     font-size: 20px;
     color: grey;
-    margin-right: 50px;
 }
 
 .messages_wraper {
     width: 90%;
-    overflow-x: auto;
-    padding-right: 50px;
+    overflow-y: auto;
+    padding-right: 75px;
 }
 
 ::-webkit-scrollbar {
@@ -72,11 +72,62 @@
 .input {
     display: flex;
     justify-self: flex-start;
-    margin-left: 30px;
 }
 
 .output {
     display: flex;
     justify-content: flex-end;
-    margin-right: 80px;
 }
+
+.last_message_shild {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .messages_container {
+        width: 95%;
+    }
+
+    .output {
+        margin-right: 10px;
+    }
+
+    .input {
+        margin-left: 10px;
+    }
+
+    .messages_wraper {
+        padding-right: 75px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .messages_container {
+        width: 100%;
+    }
+
+    .messages_wraper {
+        padding: 0;
+    }
+
+    .messages_container-message {
+        margin-right: 0;
+    }
+
+    .output {
+        margin-right: 0;
+    }
+
+    .input {
+        margin-left: 0;
+    }
+
+    .messages-form_button {
+        display: none;
+    }
+
+    .messages-form_input {
+        margin: 0;
+    }
+}
+

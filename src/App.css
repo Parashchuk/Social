@@ -33,7 +33,7 @@
   border-radius: 10px;
 }
 
-.app button {
+.button {
   background-color: rgb(250, 250, 250);
   font-size: 18px;
   color: grey;
@@ -48,7 +48,13 @@
   display: flex;
 }
 
-@media screen and (max-width: 550px) {
+.visual-container {
+  background-color: rgb(250, 250, 250);
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
   .app_container {
     flex-direction: column;
     width: 100%;
@@ -56,5 +62,11 @@
 
   .app {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .app_container {
+    width: 95%;
   }
 }

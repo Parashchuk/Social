@@ -63,7 +63,7 @@ export const loadUserProfile = (uID) => async (dispatch) => {
         dispatch(toggleFetching())
 
         const response = await getUserProfile(uID)
-
+        console.log(response)
         dispatch(setUserProfile(response.data))
         dispatch(toggleFetching())
     }

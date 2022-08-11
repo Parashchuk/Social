@@ -10,28 +10,44 @@
 }
 
 .profile-container {
-    display: inline-flex;
+    height: 100%;
+    display: flex;
     width: 100%;
     justify-content: space-between;
-    background-color: rgb(250, 250, 250);
-    border: 2px solid rgb(230, 230, 230);
-    border-radius: 15px;
-    padding: 2% 1%;
+
 }
 
-.profile-about {
+.profile-about-right {
+    width: 100%;
+    height: 100%;
+    margin-left: 1em;
+}
+
+.profile-about-right-container {
     width: 100%;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: .8%;
-
+    padding: .7em;
 }
 
 .profile-avatar {
-    height: 8em;
-    margin-right: 30px;
+    max-width: 100%;
     border-radius: 15px;
+}
+
+.profile-about-left {
+    width: 30%;
+    height: 100%;
+}
+
+.profile-about-left-container {
+    padding: .7em;
+}
+
+.profile_user-info {
+    padding-bottom: 5px;
+    border-bottom: 2px solid grey;
 }
 
 .profile-user-info_aboutMe {
@@ -50,12 +66,43 @@
 }
 
 .profile_user-job {
+    padding-top: 15px;
     margin-right: 10px;
 }
 
+.profile-about-more {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 0.3em
+}
+
+.profile-editButton {
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: .2em;
+    width: 100%;
+}
+
 @media screen and (max-width: 550px) {
-    .profile-avatar {
-        height: 6em;
+    .profile-container button {
+        font-size: 16px;
+    }
+
+    .profile-about-left {
+        width: 40%;
+    }
+    
+    .profile-user-info_name {
+        font-size: 18px;
+    }
+
+    .profile-about-left-container {
+        padding: .5em;
+    }
+
+    .profile-about-right-container {
+        padding: .5em;
     }
 
     .profile-about {

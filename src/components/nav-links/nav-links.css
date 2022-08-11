@@ -39,13 +39,13 @@
    transform: translate(0, -5%)
 }
 
-@media screen and (max-width: 700px) {
-    .nav-links {
-        display: none
+@media screen and (max-width: 1200px) {
+    .nav-links_container-links {
+        padding: 10px;
+        min-width: 170px;
     }
 }
-
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
     .nav-links {
         display: flex;
         width: 100%;
