@@ -1,7 +1,7 @@
 import React from 'react'
 import Profile from './profile'
 import {connect} from 'react-redux'
-import {loadUserProfile, loadProfileStatus, updateProfileStatus} from '../../redux/profile-reducer'
+import {loadUserProfile, loadProfileStatus, updateProfileStatus, SetPhoto} from '../../redux/profile-reducer'
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import withAuthRedirect from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
@@ -52,12 +52,14 @@ class ProfileAPI extends React.PureComponent {
     
     render() {
         return <Profile 
+            isOwner={!this.props.router.params.profileId}
             userOwnerId={this.props.uID}
             status={this.props.state.profileStatus}
             isAuth = {this.props.isAuth} 
             state={this.props.state.userProfile}
             isFetching={this.props.isFetching}
             updateProfileStatus={this.props.updateProfileStatus}
+            SetPhoto={this.props.SetPhoto}
             />
             
     }
@@ -73,7 +75,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     loadUserProfile,
     loadProfileStatus,
-    updateProfileStatus
+    updateProfileStatus,
+    SetPhoto
 }
 
 export default compose(

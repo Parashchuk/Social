@@ -1,10 +1,11 @@
-import {getUserProfile, getProfileStatus, putProfileStatus, logOut} from '../api/api'
+import {getUserProfile, getProfileStatus, putProfileStatus, logOut, putPhoto} from '../api/api'
 import { SetAuth } from './auth-reducer'
 import {toggleFetching} from './users-reducer'
 
 //Action names //
 const SET_USER_PROFILE = 'socialMedia/profile-reducer/SET-USER-PROFILE'
 const SET_PROFILE_STATUS = 'socialMedia/profile-reducer/SET-PROFILE-STATUS'
+const SET_PROIFLE_PHOTO = 'socialMedia/profile-reducer/SET-PROFILE-PHOTO'
 
 let initialState = {
     userProfile: {
@@ -21,7 +22,7 @@ let initialState = {
 
 //Reducer //
 const profileReducer = (state = initialState, action) => {
-    const {type, userProfile, profileStatus} = action
+    const {type, userProfile, profileStatus, profilePhoto} = action
     switch(type) {
         case SET_USER_PROFILE :
             return({
@@ -33,6 +34,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 profileStatus
             })
+        case SET_PROIFLE_PHOTO :
+            return({
+                ...state,
+                userProfile: {...state.userProfile, photos: {...state.userProfile.photos, large: profilePhoto}}
+            })
         default: return state
     }
 }
@@ -40,12 +46,14 @@ const profileReducer = (state = initialState, action) => {
 //Action creators //
 export const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile})
 export const setProfileStatus = (profileStatus) => ({type: SET_PROFILE_STATUS, profileStatus})
+export const setProfilePhoto = (profilePhoto) => ({type: SET_PROIFLE_PHOTO, profilePhoto})
 
 //Create a thunk ...//
 export const loadProfileStatus = (uID) => async (dispatch) => {
     if(uID) {
         const response = await getProfileStatus(uID)
         
+        console.log(response)
         dispatch(setProfileStatus(response.data))
     }
 }
@@ -63,7 +71,7 @@ export const loadUserProfile = (uID) => async (dispatch) => {
         dispatch(toggleFetching())
 
         const response = await getUserProfile(uID)
-        console.log(response)
+
         dispatch(setUserProfile(response.data))
         dispatch(toggleFetching())
     }
@@ -77,6 +85,13 @@ export const LogOutUser = () => async (dispatch) => {
         dispatch(SetAuth(false, null))
         dispatch(setUserProfile(null))
     }
+}
+
+//Create a thunk ...//
+export const SetPhoto = (photo) => async (dispatch) => {
+    const response = await putPhoto(photo)
+
+    dispatch(setProfilePhoto(response.data.data.photos.large))
 }
 
 export default profileReducer

@@ -50,3 +50,14 @@ export const logOut = () => {
     return instance.delete('auth/login')
     .then(response => response)
 }
+
+export const putPhoto = (photoFile) => {
+    const formData = new FormData();
+    formData.append('image', photoFile)
+
+    return instance.put('profile/photo', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+}

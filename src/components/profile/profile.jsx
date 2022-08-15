@@ -6,20 +6,34 @@ import isPreloader from '../../assets/common/preloader/preloader';
 import ProfileStatus from '../profile-status/profile-status';
 
 
-const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOwnerId}) => {
+const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOwnerId, SetPhoto, isOwner}) => {
     //Redirect if not logined to Login //
     if(isAuth !== true) return <Navigate to='/login'/>
 
     //Local State
-    let {edtitMode, setEditMode} = useState(false)
+    //let {edtitMode, setEditMode} = useState(false)
 
+    //First initialistaion
     if(!state.photos) return(
         <div className="profile">
             <div className="profile-container">
             </div>
         </div>
     )
+    
+    //Helpers
+    let photoChanged = (event) => {
+        if(event.target.files.length) SetPhoto(event.target.files[0])
+    }
+
+
     //Initial user's data //
+    const isChooseFile = isOwner 
+    ? <input type={'file'} 
+        accept={'image/*'} 
+        onChange={(e) => photoChanged(e)} 
+        className='profile-editButton button visual-button'/>
+    : null;
     const photo = !state.photos.large ? nullPhoto : state.photos.large
     const jobDescription = !state.lookingForAJobDescription 
     ? 'Looks like the user is not looking for a job'
@@ -35,7 +49,7 @@ const Profile = ({status, state, updateProfileStatus, isAuth, isFetching, userOw
                     <div className='profile-about-left'>
                         <div className='profile-about-left-container visual-container'>
                             <img className='profile-avatar' src={photo} alt='avatar'/>
-                            <button className='profile-editButton button visual-button'>Edit</button>
+                            {isChooseFile}
                         </div>
                     </div>
                     <div className="profile-about-right">
