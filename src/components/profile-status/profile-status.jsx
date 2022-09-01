@@ -53,7 +53,7 @@ class ProfileStatus extends React.PureComponent {
                 autoFocus={true} className='profileStatus-input' 
                 value={this.state.status} 
                 placeholder={'Type your status here'}/>
-            <button className='profileStatus-button'>Save</button>
+            <button className='profileStatus-button visual-button'>Save</button>
         </form>
         : <span onDoubleClick={this.toggleProfileStatus} className='profileStatus-span'> {isStatus} </span>
         

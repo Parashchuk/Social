@@ -7,18 +7,18 @@ const NavLinks = () => {
     return (
         <nav className="nav-links">
             <div className="nav-links_container-links">
-                <div className="container-links_wraper">
+                <Link className="container-links_wraper" to="/profile">
                     <i className="bi bi-person-fill"></i>
-                    <Link className='container-links-link' to="/profile">Profile</Link>
-                </div>
-                <div className="container-links_wraper">
+                    <div className='container-links-link'>Profile</div>
+                </Link>
+                <Link className="container-links_wraper" to="/messages">
                     <i className="bi bi-chat-text-fill"></i>
-                    <Link className='container-links-link' to="/messages">Messages</Link>
-                </div>
-                <div className="container-links_wraper">
+                    <div className='container-links-link' >Messages</div>
+                </Link>
+                <Link className="container-links_wraper" to="/users">
                     <i className="bi bi-people-fill"></i>
-                    <Link className='container-links-link' to="/users">Users</Link>
-                </div>
+                    <div className='container-links-link' >Users</div>
+                </Link>
             </div>
         </nav>
     )

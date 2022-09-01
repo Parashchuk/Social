@@ -22,7 +22,7 @@
     transition: .2s;
 }
 
-.container-links-link:hover {
+.container-links_wraper:hover .container-links-link{
     color: white;
     background-color: steelblue;
 }
@@ -33,9 +33,10 @@
 }
 
 .container-links_wraper i::before {
-   font-size: 22px;
-   margin-right: 2px;
-   transform: translate(0, -5%)
+    color: black;
+    font-size: 22px;
+    margin-right: 2px;
+    transform: translate(0, -5%)
 }
 
 @media screen and (max-width: 1200px) {

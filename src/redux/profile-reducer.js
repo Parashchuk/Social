@@ -53,7 +53,6 @@ export const loadProfileStatus = (uID) => async (dispatch) => {
     if(uID) {
         const response = await getProfileStatus(uID)
         
-        console.log(response)
         dispatch(setProfileStatus(response.data))
     }
 }

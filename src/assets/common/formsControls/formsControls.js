@@ -6,7 +6,7 @@ export const Element = Element => ({ input, meta, ...props }) => {
     const hasError = meta.touched && meta.error;
     return (
       <div className={hasError ? 'input-container input_error' : 'input-container'}>
-        <Element {...input} {...props} />
+        <Element className={'visual-input'} {...input} {...props} />
         { hasError && <span className={hasError ? 'span_error' : ''}> { meta.error } </span> }
       </div>
     );

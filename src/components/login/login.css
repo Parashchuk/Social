@@ -28,6 +28,7 @@
 }
 
 .login-container_input {
+    border-radius: 5px;
     margin: 15px 0;
     padding: 10px;
 }
@@ -46,4 +47,10 @@
 .api-error {
     padding: 5px;
     text-shadow: 0px 0px 10px brown;
+}
+
+.login-submit_wrap {
+    display: flex;
+    justify-content: space-between;
+
 }
