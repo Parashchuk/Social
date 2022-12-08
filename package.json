@@ -2,7 +2,7 @@
   "name": "social_media",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anypaster.github.io",
+  "homepage": "https://anypaster.github.io/social",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
